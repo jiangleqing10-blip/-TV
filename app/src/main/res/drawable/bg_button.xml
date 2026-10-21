@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 遥控器焦点态：高亮绿色边框，方便电视端分辨当前选中项 -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/muqi_accent" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/muqi_surface" />
+            <stroke android:width="2dp" android:color="@color/muqi_accent_dark" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</selector>

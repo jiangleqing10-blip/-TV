@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">muqitv</string>
+    <string name="activation_title">muqitv 激活</string>
+    <string name="activation_hint">请输入激活码</string>
+    <string name="activation_button">确认激活</string>
+    <string name="activation_error">激活码错误，请重新输入</string>
+    <string name="loading">正在加载…</string>
+    <string name="network_error">网络连接失败，请检查网络后重试</string>
+    <string name="retry">重试</string>
+</resources>

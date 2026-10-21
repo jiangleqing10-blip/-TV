@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 不强制要求触摸屏，兼容 Android TV（无触摸屏设备） -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <!-- 不强制要求支持 Leanback，这样手机/平板也能安装用于测试 -->
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:banner="@mipmap/ic_banner"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.MuqiTv"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.MuqiTv">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- 手机/平板桌面图标入口 -->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- Android TV 桌面（Leanback 启动器）入口，显示 banner -->
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

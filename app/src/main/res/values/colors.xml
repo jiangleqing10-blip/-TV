@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 与 muqitv 网站同一套深绿色视觉体系 -->
+    <color name="muqi_bg">#0A1210</color>
+    <color name="muqi_surface">#121E1A</color>
+    <color name="muqi_accent">#00BE6E</color>
+    <color name="muqi_accent_dark">#00894F</color>
+    <color name="muqi_text">#E8F5ED</color>
+    <color name="muqi_text_muted">#94ADA0</color>
+    <color name="muqi_error">#EF4444</color>
+</resources>

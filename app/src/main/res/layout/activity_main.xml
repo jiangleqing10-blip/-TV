@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/muqi_bg">
+
+    <!-- 主内容：WebView 全屏承载 muqitv 网站 -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- 加载中遮罩 -->
+    <LinearLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/muqi_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:indeterminateTint="@color/muqi_accent" />
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/loading"
+            android:textColor="@color/muqi_text_muted"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 网络错误遮罩 -->
+    <LinearLayout
+        android:id="@+id/errorOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/muqi_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/network_error"
+            android:textAlignment="center"
+            android:textColor="@color/muqi_text"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/retryButton"
+            android:layout_width="160dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_button"
+            android:text="@string/retry"
+            android:textColor="@color/muqi_text" />
+    </LinearLayout>
+
+    <!-- 首次激活码输入界面：验证成功后写入本地标记，之后不再弹出 -->
+    <LinearLayout
+        android:id="@+id/activationOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/muqi_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="48dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activation_title"
+            android:textColor="@color/muqi_accent"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/activation_hint"
+            android:textColor="@color/muqi_text_muted"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/codeInput"
+            android:layout_width="360dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_input"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:inputType="textVisiblePassword"
+            android:maxLines="1"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/muqi_text"
+            android:textColorHint="@color/muqi_text_muted"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/activationErrorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/activation_error"
+            android:textColor="@color/muqi_error"
+            android:textSize="14sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/activateButton"
+            android:layout_width="200dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_button"
+            android:text="@string/activation_button"
+            android:textColor="@color/muqi_text" />
+    </LinearLayout>
+
+</FrameLayout>
